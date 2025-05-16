@@ -1,0 +1,526 @@
+/* css/style.css */
+
+/* --- CSS Reset/Normalize (Optional but Recommended) --- */
+/* You can copy and paste a popular reset like Meyerweb or Normalize.css here */
+/* For simplicity in this example, we'll include a mini-reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Choose a better font */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4; /* Slightly darker background */
+}
+
+/* --- General Styles --- */
+.container {
+    width: 95%; /* Takes up most width on small screens */
+    max-width: 1200px; /* Maximum width it will ever take */
+    margin: 0 auto;
+    padding: 0 10px; /* Horizontal padding */
+}
+
+h1, h2, h3 {
+    color: #333; /* Heading color */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.6em; }
+h3 { font-size: 1.3em; }
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease; /* Smooth transition for links */
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Helps with layout issues */
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 1em;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Space above button */
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.add-to-cart {
+    background-color: #28a745; /* Green color */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #218838;
+}
+
+/* --- Header and Navigation --- */
+header {
+    background-color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky; /* Makes header stick to the top */
+    top: 0;
+    z-index: 1000; /* Ensures header is above other content */
+}
+
+header .container {
+    display: flex;
+    flex-direction: column; /* Stack on mobile */
+    align-items: center; /* Center items horizontally when stacked */
+}
+
+.site-title h1 {
+    margin: 0;
+    font-size: 1.8em; /* Adjust size for mobile */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0; /* Space above nav list */
+    display: flex;
+    flex-direction: column; /* Stack nav items on mobile */
+    align-items: center; /* Center nav links */
+    width: 100%; /* Make list take full width */
+}
+
+nav li {
+    margin: 5px 0; /* Vertical space between nav items */
+}
+
+nav a {
+    display: block; /* Make the whole link area clickable */
+    padding: 8px 15px;
+    color: #333;
+    font-weight: bold;
+    border-bottom: 1px solid #eee; /* Separator line */
+    width: 100%; /* Full width clickable area */
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: #f8f8f8;
+    text-decoration: none;
+}
+
+/* --- Main Content Layout --- */
+main {
+    padding: 20px 0; /* Vertical padding for main content */
+}
+
+section {
+    margin-bottom: 30px; /* Space between main sections */
+    padding: 15px; /* Inner padding for sections */
+    background-color: #fff; /* White background for sections */
+    border-radius: 8px; /* Rounded corners for sections */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08); /* Subtle shadow */
+}
+
+/* --- Homepage Specifics --- */
+.hero {
+    background: url('../images/hero-bg.jpg') no-repeat center center/cover; /* Add a hero background image */
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    margin-bottom: 30px; /* Space after hero */
+    border-radius: 8px;
+}
+
+.hero h2 {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+/* Ensure buttons in hero have appropriate styling */
+.hero .btn {
+    background-color: #ffc107; /* Accent color for hero button */
+    color: #333;
+    border: none;
+}
+
+.hero .btn:hover {
+    background-color: #e0a800;
+}
+
+
+.featured-products .product-list {
+     /* Layout handled by product-grid/product-list styles below */
+     margin-top: 20px; /* Space below heading */
+}
+
+
+.promotions {
+    background-color: #d4edda; /* Light green background */
+    color: #155724; /* Dark green text */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.promotions h3 {
+    color: #155724;
+    margin-bottom: 10px;
+}
+
+/* --- Product Listing/Grid --- */
+.product-grid, .product-list {
+    display: grid;
+    grid-template-columns: 1fr; /* Default single column for mobile */
+    gap: 20px; /* Space between grid items */
+    margin-top: 20px;
+}
+
+.product-item {
+    background-color: #fff;
+    border: 1px solid #eee; /* Lighter border */
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
+}
+
+.product-item:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* More prominent shadow */
+}
+
+.product-item img {
+    margin-bottom: 10px;
+    border-radius: 4px; /* Slightly rounded image corners */
+}
+
+.product-item h3 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.product-item .price {
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+.product-item a { /* Style links around product images/names */
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none;
+}
+
+.product-item a:hover {
+     text-decoration: underline;
+     color: #007bff; /* Or keep it inherited */
+}
+
+
+.filters {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f8f8f8;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; /* Stack filters on mobile */
+    gap: 10px;
+}
+
+.filters label {
+    font-weight: bold;
+}
+
+.filters select, .filters input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    width: 100%; /* Full width on mobile */
+}
+
+
+/* --- Product Detail Page --- */
+.product-detail .container {
+    display: flex;
+    flex-direction: column; /* Stack image and info on mobile */
+    gap: 20px; /* Space between stacked items */
+}
+
+.product-image {
+    flex: 1; /* Allows flex item to grow */
+    text-align: center; /* Center image if smaller than container */
+}
+
+.product-image img {
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+}
+
+.product-info {
+    flex: 1; /* Allows flex item to grow */
+}
+
+.product-info h2 {
+    margin-bottom: 10px;
+    font-size: 1.8em;
+}
+
+.product-info .price {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 15px;
+}
+
+.product-info .description {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.quantity-selector {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-selector label {
+    font-weight: bold;
+}
+
+.quantity-selector input[type="number"] {
+    width: 60px; /* Fixed width for quantity input */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    text-align: center;
+}
+
+.product-meta {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.related-products .product-list {
+    margin-top: 20px;
+}
+
+
+/* --- Cart Page --- */
+.cart #cart-items {
+    margin-top: 20px;
+}
+
+.cart-item {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column; /* Stack items on mobile */
+    gap: 15px; /* Space between stacked item parts */
+    align-items: center; /* Center stacked items */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.cart-item img {
+    width: 80px; /* Fixed width for cart item image */
+    height: auto;
+    border-radius: 4px;
+}
+
+.cart-item .item-details {
+    flex-grow: 1; /* Allows details to take available space */
+    text-align: center; /* Center details text */
+}
+
+.cart-item h3 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.cart-item .price {
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+.cart-item .quantity-selector {
+    justify-content: center; /* Center quantity selector in stacked view */
+}
+
+.cart-item .remove-item {
+    background-color: #dc3545; /* Red color */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: background-color 0.3s ease;
+}
+
+.cart-item .remove-item:hover {
+    background-color: #c82333;
+}
+
+
+.cart-summary {
+    background-color: #f8f8f8;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px; /* Space above summary */
+    width: 100%; /* Full width on mobile */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.cart-summary h3 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.cart-summary p {
+    display: flex;
+    justify-content: space-between; /* Align labels and values */
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.cart-summary p:last-child {
+    border-bottom: none; /* No border for the last item (Total) */
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.checkout-btn {
+    display: block; /* Make checkout button full width */
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* --- Checkout Page --- */
+.checkout form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block; /* Label on its own line */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%; /* Full width input */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #007bff; /* Highlight on focus */
+    box-shadow: 0 0 5px rgba(0,123,255,0.25);
+}
+
+.place-order-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+
+/* --- Footer --- */
+footer {
+    background-color: #333;
+    color: #f8f8f8;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px; /* Space above footer */
+}
+
+footer .container {
+     display: flex;
+     flex-direction: column; /* Stack on mobile */
+     align-items: center;
+}
+
+footer p {
+    margin: 0 0 10px 0;
+    font-size: 0.9em;
+}
+
+.social-links a {
+    color: #f8f8f8;
+    margin: 0 10px;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #007bff; /* Highlight color on hover */
+    text-decoration: none;
+}

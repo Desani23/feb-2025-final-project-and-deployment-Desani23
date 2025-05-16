@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - Your E-commerce Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="site-title">
+                <h1>My Awesome Store</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Shop</a></li>
+                    <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="all-products">
+            <div class="container">
+                <h2>All Products</h2>
+                <div class="filters">
+                    <label for="sort">Sort By:</label>
+                    <select id="sort">
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="name-asc">Name: A-Z</option>
+                    </select>
+                    </div>
+                <div class="product-grid">
+                    <article class="product-item">
+                        <a href="product-detail.html?id=1">
+                            <img src="images/product1.jpg" alt="Product 1">
+                            <h3>Product Name 1</h3>
+                        </a>
+                        <p class="price">$19.99</p>
+                        <button class="add-to-cart" data-product-id="1">Add to Cart</button>
+                    </article>
+                    <article class="product-item">
+                         <a href="product-detail.html?id=2">
+                            <img src="images/product2.jpg" alt="Product 2">
+                            <h3>Product Name 2</h3>
+                         </a>
+                        <p class="price">$29.99</p>
+                        <button class="add-to-cart" data-product-id="2">Add to Cart</button>
+                    </article>
+                    </div>
+            </div>
+        </section>
+    </main>
+
+     <footer id="footer">
+        <div class="container">
+            <p>&copy; 2023 My Awesome Store. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

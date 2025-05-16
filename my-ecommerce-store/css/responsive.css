@@ -1,0 +1,211 @@
+/* css/responsive.css */
+
+/* --- Tablet and Larger Screens --- */
+@media (min-width: 768px) {
+    .container {
+        width: 90%; /* Use 90% width on tablets and larger */
+        padding: 0 15px;
+    }
+
+    /* Header and Nav: Arrange horizontally */
+    header .container {
+        flex-direction: row;
+        justify-content: space-between; /* Space out title and nav */
+        align-items: center;
+    }
+
+    .site-title h1 {
+        font-size: 2em; /* Larger size on tablets+ */
+    }
+
+    nav ul {
+        flex-direction: row; /* Horizontal nav */
+        margin: 0; /* Remove top margin */
+        width: auto; /* Auto width */
+    }
+
+    nav li {
+        margin-left: 25px; /* Space between nav items */
+        margin-bottom: 0;
+    }
+
+    nav a {
+        padding: 0; /* Remove padding for horizontal links */
+        border-bottom: none; /* Remove separator line */
+        width: auto;
+        text-align: left;
+    }
+
+     nav a:hover {
+        background-color: transparent; /* No background on hover */
+     }
+
+
+    /* Product Grid: More columns on tablets+ */
+    .product-grid, .product-list {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* 2 or more columns */
+        gap: 25px;
+    }
+
+    /* Filters: Arrange horizontally */
+    .filters {
+        flex-direction: row;
+        align-items: center;
+        gap: 20px; /* Space between filter elements */
+    }
+
+    .filters label {
+        flex-shrink: 0; /* Prevent label from shrinking */
+    }
+
+    .filters select, .filters input[type="text"] {
+        width: auto; /* Auto width based on content/flex */
+        flex-grow: 1; /* Allow inputs/selects to grow */
+    }
+
+
+    /* Product Detail: Side-by-side layout */
+    .product-detail .container {
+        flex-direction: row; /* Side-by-side */
+        gap: 40px; /* Space between image and info */
+    }
+
+    .product-image {
+        flex: 1; /* Image section takes 1 part of space */
+         max-width: 400px; /* Optional: max width for image container */
+    }
+
+    .product-info {
+        flex: 2; /* Info section takes 2 parts of space */
+    }
+
+    .product-info h2 {
+        font-size: 2.2em; /* Larger heading */
+    }
+
+    .product-info .price {
+         font-size: 1.6em;
+    }
+
+    .quantity-selector {
+         justify-content: flex-start; /* Align quantity left */
+    }
+
+
+    /* Cart Page: Side-by-side layout for items and summary */
+    .cart .container {
+         display: flex;
+         gap: 30px; /* Space between cart items and summary */
+         align-items: flex-start; /* Align items to the top */
+         flex-direction: row; /* Items and summary side-by-side */
+    }
+
+     .cart #cart-items {
+         flex-grow: 1; /* Cart items take available space */
+         margin-top: 0; /* Remove top margin */
+     }
+
+    .cart-item {
+        flex-direction: row; /* Item details side-by-side */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .cart-item img {
+         width: 100px; /* Slightly larger image */
+    }
+
+    .cart-item .item-details {
+         flex-grow: 1;
+         text-align: left; /* Align text left */
+         margin-left: 15px; /* Space from image */
+    }
+
+    .cart-item .quantity-selector {
+        justify-content: flex-start;
+         flex-shrink: 0; /* Prevent shrinking */
+         margin-left: 15px; /* Space from details */
+    }
+
+    .cart-item .remove-item {
+         flex-shrink: 0; /* Prevent shrinking */
+         margin-left: 15px; /* Space from quantity */
+    }
+
+    .cart-summary {
+        flex-shrink: 0; /* Prevent summary from shrinking */
+        width: 300px; /* Fixed width for summary */
+        margin-top: 0; /* Remove top margin */
+        position: sticky; /* Make summary stick */
+        top: 80px; /* Adjust based on header height */
+    }
+
+    /* Checkout Page: Adjust form layout (optional, can keep stacked) */
+    /* Example: Make form groups display side-by-side if desired */
+    /*
+    .checkout form {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    .form-group {
+        margin-bottom: 0; // Remove margin if using grid gap
+    }
+    */
+
+
+    /* Footer: Arrange horizontally */
+    footer .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    footer p {
+        margin: 0;
+    }
+
+    .social-links {
+         margin-top: 0;
+    }
+}
+
+/* --- Desktop and Larger Screens --- */
+@media (min-width: 1024px) {
+     .container {
+        width: 85%; /* Use 85% width on larger desktops */
+     }
+
+     .site-title h1 {
+        font-size: 2.2em; /* Even larger heading */
+     }
+
+     nav li {
+        margin-left: 30px; /* More space in nav */
+     }
+
+     .product-grid, .product-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 3-4 columns */
+        gap: 30px;
+     }
+
+     .product-detail .container {
+         gap: 60px; /* More space on product detail */
+     }
+
+     .product-info h2 {
+        font-size: 2.5em; /* Largest product title */
+     }
+}
+
+/* --- Large Desktop Screens (Optional) --- */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px; /* Allow container to be wider */
+    }
+
+    .product-grid, .product-list {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Potentially 4-5 columns */
+        gap: 40px;
+    }
+}
